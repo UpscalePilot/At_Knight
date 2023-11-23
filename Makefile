@@ -4,30 +4,36 @@
 CC:= gcc
 
 # C Flags
-CFLAGS:=-std=c11 -Wall
+CFLAGS:=-std=c11 -Wall -lncurses -ltinfo
 
 # V Path
 VPATH:= src bin obj
 
-app_name: main.o		# create  app
+atKnight: main.o asciiArt.o	objects.o	# create  app
 	$(CC) -o $@ $(CFLAGS) $^
 	mv *.o obj	
 
-#main.o: main.c main.h 
-#	$(CC) $(CFLAGS) -c $^
-#	mv src/*.gch obj
+asciiArt.o: asciiArt.c asciiArt.h 
+	$(CC) $(CFLAGS) -c $^
+	mv src/*.gch obj
+
+objects.o: objects.c objects.h
+	$(CC) $(CFLAGS) -c $^
+	mv src/*.gch obj
 
 %.o: %.c			# compile .c files
 	$(CC) -c $(CFLAGS) $^
 
 
-.PHONY: clean, run
+.PHONY: clean, run, r
 clean:				# removes all .o and app files
-	rm -f *.o app_name obj/*.o obj/*.gch
+	rm -f *.o atKnight obj/*.o obj/*.gch
 
 
 run:				# runs app_name application
-	./app_name
+	./atKnight
 
-
+r:
+	make
+	make run
 
