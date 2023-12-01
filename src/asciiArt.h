@@ -12,8 +12,6 @@
 
 void printCastle();
 void printTitle();
-void level_outline();
-void level1();
 
 
 

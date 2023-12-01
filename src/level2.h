@@ -1,3 +1,4 @@
+
 /*
 #####################################################################
 #           Ben Morley - CMPT 201 - Project                         #
@@ -9,28 +10,8 @@
 
 
 
-void asciiBed( int, int);
+// prototypes
 
-void asciiTable( int, int);
+void level2();
 
-void rectangle( int, int, int, int);
 
-void staircaseR( int, int);
-
-void staircaseL( int, int);
-
-void make_door(int, int);
-
-void couch(int, int);
-
-void level_outline();
-
-void loungeRoom();
-
-void bedroom();
-
-void bathroom();
-
-void giantBed(int, int);
-
-void gridnumbers();

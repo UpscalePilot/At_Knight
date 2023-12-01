@@ -9,21 +9,17 @@ CFLAGS:=-std=c11 -Wall -lncurses -ltinfo
 # V Path
 VPATH:= src bin obj
 
-atKnight: main.o asciiArt.o	objects.o	# create  app
+atKnight: main.o asciiArt.o	objects.o level1.o level2.o level3.o	# create  app
 	$(CC) -o $@ $(CFLAGS) $^
-	mv *.o obj	
+	mv *.o obj
 
-asciiArt.o: asciiArt.c asciiArt.h 
-	$(CC) $(CFLAGS) -c $^
-	mv src/*.gch obj
 
-objects.o: objects.c objects.h
-	$(CC) $(CFLAGS) -c $^
-	mv src/*.gch obj
+main.o: main.c
+	$(CC) -c $(CLFAGS) $^
 
-%.o: %.c			# compile .c files
+%.o: %.c %.h			# compile .c files
 	$(CC) -c $(CFLAGS) $^
-
+	mv src/*.gch obj
 
 .PHONY: clean, run, r
 clean:				# removes all .o and app files

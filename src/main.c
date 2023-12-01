@@ -12,6 +12,9 @@
 #include<ncurses.h>
 #include<unistd.h>
 #include"asciiArt.h"
+#include"level1.h"
+#include"level2.h"
+#include"level3.h"
 
 // PROTOTYPES
 void init_scr();
@@ -27,6 +30,12 @@ int main(int argc, char* argv[]){
 
 	display_level(1);		// displays level 1
 	getch();		// waits for user to enter a character
+
+	display_level(2);
+	getch();
+
+	display_level(3);
+	getch();
 
 	endwin();	//closes window at end of program
 }
@@ -69,6 +78,13 @@ void display_level(int i){
 		case 1:
 			level1();		// displays level 1
 			break;
+		case 2:
+			level2();
+			break;
+		case 3:
+			level3();
+			break;
 	}
+
 
 }
