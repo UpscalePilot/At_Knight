@@ -68,4 +68,58 @@ void printTitle() {		// ascii art for the game title
     printw("   \\____/                                          \n");
 }
 
+void pause_screen(){
+	clear();
+	move(0 , 1);
+    printw(".______      ___      __    __       _______. _______  _______  \n");
+    printw("|   _  \\    /   \\    |  |  |  |     /       ||   ____||       \\ \n");
+    printw("|  |_)  |  /  ^  \\   |  |  |  |    |   (----`|  |__   |  .--.  |\n");
+    printw("|   ___/  /  /_\\  \\  |  |  |  |     \\   \\    |   __|  |  |  |  |\n");
+    printw("|  |     /  _____  \\ |  `--'  | .----)   |   |  |____ |  '--'  |\n");
+    printw("| _|    /__/     \\__\\ \\______/  |_______/    |_______||_______/ \n");
 
+	move(6, 22);
+	attron(A_BLINK);
+	printw("Press P to resume");
+	attroff(A_BLINK);
+    refresh();
+}
+
+
+void win_screen(){
+	clear();
+	attron(A_BLINK);
+	printw("____    ____  ______    __    __  \n");
+    printw("\\   \\  /   / /  __  \\  |  |  |  | \n");
+    printw(" \\   \\/   / |  |  |  | |  |  |  | \n");
+    printw("  \\_    _/  |  |  |  | |  |  |  | \n");
+    printw("    |  |    |  `--'  | |  `--'  | \n");
+    printw("    |__|     \\______/   \\______/  \n");
+	printw("                                  \n");
+	printw("____    __    ____  __  .__   __. \n");
+	printw("\\   \\  /  \\  /   / |  | |  \\ |  | \n");
+    printw(" \\   \\/    \\/   /  |  | |   \\|  | \n");
+    printw("  \\            /   |  | |  . `  | \n");
+    printw("   \\    /\\    /    |  | |  |\\   | \n");
+    printw("    \\__/  \\__/     |__| |__| \\__| \n\n");
+	printw("          Press Q to quit           ");
+        
+	attroff(A_BLINK);
+	refresh();
+}
+
+
+void quit_screen() {
+	clear();
+    printw("  ______      __    __   __  .___________.______   \n");
+    printw(" /  __  \\    |  |  |  | |  | |           |      \\  \n");
+    printw("|  |  |  |   |  |  |  | |  | `---|  |----`----)  | \n");
+    printw("|  |  |  |   |  |  |  | |  |     |  |        /  /  \n");
+    printw("|  `--'  '--.|  `--'  | |  |     |  |       |__|   \n");
+    printw(" \\_____\\_____\\\\______/  |__|     |__|        __    \n");
+    printw("                                            (__)   \n");
+	printw("     Are you sure you want to quit? (y or n)    ");
+
+
+    refresh();
+}

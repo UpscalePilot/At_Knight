@@ -12,6 +12,7 @@
 
 void printCastle();
 void printTitle();
-
-
+void pause_screen();
+void win_screen();
+void quit_screen();
 
